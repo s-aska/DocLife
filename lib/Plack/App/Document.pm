@@ -20,7 +20,6 @@ use Plack::Util::Accessor qw(
 
 sub prepare_app {
     my ($self, $env) = @_;
-    
     $self->base_url('/') unless defined $self->base_url;
     $self->root(dir(abs_path($self->root || './')));
 }
@@ -31,7 +30,7 @@ sub call {
     my $req = Plack::Request->new($env);
     my $res = $req->new_response(200);
     $res->content_type('text/html; charset=UTF-8');
-    
+
     if ($req->path eq '/') {
         $self->toppage($req, $res);
     }
@@ -41,7 +40,6 @@ sub call {
     else {
         $self->page($req, $res);
     }
-
     $res->finalize;
 }
 
@@ -53,8 +51,9 @@ sub format {
 
 sub page {
     my ($self, $req, $res) = @_;
+
     my $file = file($self->root, $req->path);
-    $file = file($self->root, $req->path . $self->suffix) unless -f $file;
+    $file = file($self->root, $req->path . $self->suffix) if !-f $file and defined $self->suffix;
     if (-f $file) {
         $self->format($req, $res, $file);
     }
@@ -65,6 +64,7 @@ sub page {
 
 sub toppage {
     my ($self, $req, $res) = @_;
+
     my $body = $self->html_header;
     my $suffix = $self->suffix;
     my $root = $self->root;
@@ -139,18 +139,18 @@ need base_url option.
     use Plack::Builder;
     use Plack::App::Document::Pod;
     use Plack::App::Document::Markdown;
-    
+
     my $pod_app = Plack::App::Document::Pod->new(
         root => '../lib',
         base_url => '/pod/'
     );
-    
+
     my $doc_app = Plack::App::Document::Markdown->new(
         root => './doc',
         suffix => '.md',
         base_url => '/doc/'
     );
-    
+
     builder {
         mount '/pod' => $pod_app;
         mount '/doc' => $doc_app;

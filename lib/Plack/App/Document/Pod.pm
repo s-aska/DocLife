@@ -29,6 +29,7 @@ sub format {
 
 sub html_header {
 my ($self, $title) = @_;
+$title = 'Index' unless defined $title;
 <<"EOF"
 <!DOCTYPE html>
 <html>
@@ -102,9 +103,7 @@ Plack::App::Document::Pod - Pod Viewer.
 
 =head1 SEE ALSO
 
-L<Plack::App::Document>
-
-L<Pod::Simple::XHTML>
+L<Plack::App::Document>, L<Pod::Simple::XHTML>
 
 =cut
 

@@ -99,9 +99,7 @@ Plack::App::Document::Markdown - Markdown Viewer.
 
 =head1 SEE ALSO
 
-L<Plack::App::Document>
-
-L<Text::Markdown>
+L<Plack::App::Document>, L<Text::Markdown>
 
 =cut
 
