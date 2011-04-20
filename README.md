@@ -28,8 +28,8 @@ enjoy document life!
 ## DEMO
 
 - demo: <http://pad.demo.7kai.org/>
-- author's blog: <http://blog.7kai.org/doc/> powered by App::MarkdownDiary
-- author's wiki: <http://doc.7kai.org/doc/> powered by App::MarkdownBinder
+- author's blog: <http://blog.7kai.org/> powered by App::MarkdownDiary
+- author's wiki: <http://doc.7kai.org/> powered by App::MarkdownBinder
 
 ## SUPPORT AND DOCUMENTATION
 
