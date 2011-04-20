@@ -15,9 +15,10 @@ sub format {
         return;
     }
     
+    my $home = $self->base_url;
     my ($title) = $body=~m|^package (.*);|;
     $title ||= $file->basename;
-    my $src = qq{<a href="?source=1">Source</a>};
+    my $src = qq{<p class="home"><a href="$home">Home</a></p><a href="?source=1">Source</a>};
     my $pod = Pod::Simple::XHTML->new;
     $pod->html_header($self->html_header($title) . $src);
     $pod->index(1);
@@ -38,6 +39,10 @@ body {
     font-family: arial,sans-serif;
     margin: 0;
     padding: 1ex;
+}
+body > :last-child {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #069;
 }
 a:link, a:visited {
     color: #069;
@@ -70,6 +75,11 @@ pre {
     color: black;
     padding: 1em;
     white-space: pre;
+}
+.home {
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 </style>
 </head>
