@@ -19,7 +19,7 @@ enjoy document life!
 
 ## INSTALL
 
-    cpanm Plack::App::Document
+    cpanm https://github.com/s-aska/plack-app-document/tarball/master
 
 ## RUN
 
@@ -27,14 +27,13 @@ enjoy document life!
 
 ## DEMO
 
-- demo: <http://pad.demo.7kai.org/doc/>
+- demo: <http://pad.demo.7kai.org/>
 - author's blog: <http://blog.7kai.org/doc/> powered by App::MarkdownDiary
 - author's wiki: <http://doc.7kai.org/doc/> powered by App::MarkdownBinder
 
 ## SUPPORT AND DOCUMENTATION
 
 - github: <https://github.com/s-aska/plack-app-document>
-- cpan: <http://search.cpan.org/dist/Plack-App-Document/>
 - perldoc `perldoc Plack::App::Document`
 
 ## LICENSE AND COPYRIGHT
