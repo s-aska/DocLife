@@ -2,39 +2,27 @@
 
 Document Viewer written in Perl, to run under Plack.
 
-- Pod Viewer
-- Markdown Viewer
-
-## Author's Message (Japanese)
-
-CPAN Authorであれば皆ローカルに似たような物を作っていそうですが、標準化できそうな部分を切り出して公開することにしました。
-
-Markdownはgithubに上げる前の下書きを少し意識しましたが、github独自の拡張記法は一切ケアしていません。
-
-DocLife::Note, App::Diary という拡張アプリの実装例がexampleに同梱されています、作者が実際に利用しています。（以下DEMO参照）
-
-Plack::Builderのmount機能がVirtualHostも兼ねているので上げ落としも楽です、またコンテンツはDropboxで管理しているのでローカルのエディタで更新しています。
+- DocLife::Pod is Pod Viewer
+- DocLife::Markdown  is Markdown Viewer
 
 enjoy document life!
 
 ## INSTALL
 
-    cpanm https://github.com/s-aska/DocLife/tarball/master
+    cpanm DocLife
 
 ## RUN
 
     plackup -MDocLife::Pod -e 'DocLife::Pod->new( root => "./lib" )->to_app'
 
-## DEMO
+## Screenshot
 
-- demo: <http://pad.demo.7kai.org/>
-- author's blog: <http://blog.7kai.org/> powered by DocLife::Blog
-- author's note: <http://doc.7kai.org/> powered by DocLife::Note
+<img src="http://dl.dropbox.com/u/11475683/screen/doclife001.png">
 
 ## SUPPORT AND DOCUMENTATION
 
 - github: <https://github.com/s-aska/DocLife>
-- perldoc `perldoc DocLife`
+- cpan: <http://search.cpan.org/dist/DocLife/>
 
 ## LICENSE AND COPYRIGHT
 
