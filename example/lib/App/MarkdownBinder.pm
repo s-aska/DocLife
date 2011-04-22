@@ -2,7 +2,7 @@ package App::MarkdownBinder;
 
 use strict;
 use warnings;
-use parent 'Plack::App::Document';
+use parent 'DocLife';
 use Plack::Util::Accessor qw(title tx);
 use Encode;
 use Encode::Locale;

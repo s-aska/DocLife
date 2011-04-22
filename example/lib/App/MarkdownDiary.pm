@@ -2,7 +2,7 @@ package App::MarkdownDiary;
 
 use strict;
 use warnings;
-use parent 'Plack::App::Document';
+use parent 'DocLife';
 use Plack::Util::Accessor qw(tx title footer rss_url viewdir tmpdir max_recents max_disp);
 use Calendar::Simple;
 use Cwd 'abs_path';

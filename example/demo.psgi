@@ -1,18 +1,18 @@
 use strict;
 use Plack::Builder;
 use Plack::App::File;
-use Plack::App::Document;
-use Plack::App::Document::Pod;
-use Plack::App::Document::Markdown;
+use DocLife;
+use DocLife::Pod;
+use DocLife::Markdown;
 use App::MarkdownBinder;
 use App::MarkdownDiary;
 
-my $pod_app = Plack::App::Document::Pod->new(
+my $pod_app = DocLife::Pod->new(
     root => '../lib',
     base_url => '/pod/'
 );
 
-my $doc_app = Plack::App::Document::Markdown->new(
+my $doc_app = DocLife::Markdown->new(
     root => './doc',
     suffix => '.md',
     base_url => '/doc/'

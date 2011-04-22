@@ -3,7 +3,7 @@
 use Test::More tests => 1;
 
 BEGIN {
-    use_ok( 'Plack::App::Document' ) || print "Bail out!\n";
+    use_ok( 'DocLife' ) || print "Bail out!\n";
 }
 
-diag( "Testing Plack::App::Document $Plack::App::Document::VERSION, Perl $], $^X" );
+diag( "Testing DocLife $DocLife::VERSION, Perl $], $^X" );

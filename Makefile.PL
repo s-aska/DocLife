@@ -1,7 +1,7 @@
 use inc::Module::Install;
 
-name 'Plack-App-Document';
-all_from 'lib/Plack/App/Document.pm';
+name 'DocLife';
+all_from 'lib/DocLife.pm';
 requires 'Path::Class';
 requires 'Plack';
 requires 'Pod::Simple::XHTML';
