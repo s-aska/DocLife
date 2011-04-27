@@ -23,6 +23,7 @@ enjoy document life!
 
 - github: <https://github.com/s-aska/DocLife>
 - cpan: <http://search.cpan.org/dist/DocLife/>
+- perldoc: perldoc -t DocLife
 
 ## LICENSE AND COPYRIGHT
 
