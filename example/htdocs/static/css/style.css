@@ -122,9 +122,9 @@ a:hover {
     height: auto;
 }
 #wrapper:after {
+    content: "";
     display: block;
     clear: both;
-    content:"";
 } /* clearfix */
 
 /********** header **********/

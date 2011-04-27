@@ -78,18 +78,21 @@ sub page {
 
 sub not_found {
     my ($self, $req, $res, $file) = @_;
+    
     my $body = $self->tx->render('wrap.tx', {
-       app => $self,
-       path => $req->path
+        is_404 => 1,
+        app => $self,
+        path => $req->path
     });
+    $res->status(404);
     $res->body(encode_utf8($body));
 }
 
 sub format {
     my ($self, $req, $res, $file) = @_;
     my $body = $self->tx->render('wrap.tx', {
-       app => $self,
-       file => $file
+        app => $self,
+        file => $file
     });
     $res->body(encode_utf8($body));
 }

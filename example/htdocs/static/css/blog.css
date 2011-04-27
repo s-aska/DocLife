@@ -104,6 +104,11 @@ article nav {
     padding-top: 10px;
     border-top: 1px solid #ccc;
 }
+article nav:after {
+    display: block;
+    clear: both;
+    content:"";
+} /* clearfix */
 article nav .date {
     float: right;
     font-size: 12px;
@@ -132,8 +137,3 @@ article nav.entry-list h1 {
 article nav.entry-list .date {
     padding-top: 10px;
 }
-article nav.entry-list:after {
-    display: block;
-    clear: both;
-    content:"";
-} /* clearfix */

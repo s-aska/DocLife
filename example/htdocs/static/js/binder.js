@@ -106,7 +106,7 @@ function initApplication(){
     if (history.pushState) {
         // history.pushState('/', '', location.protocol + '//' + location.host + location.pathname);
         // browser go back event
-        window.addEventListener('popstate', function (event) {
+        w.bind("popstate", function (event) {
             if (binder.gone) {
                 binder.load(event.state);
             }
