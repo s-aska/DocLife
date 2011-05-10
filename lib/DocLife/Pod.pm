@@ -41,10 +41,6 @@ body {
     margin: 0;
     padding: 1ex;
 }
-body > :last-child {
-    padding-bottom: 10px;
-    border-bottom: 1px solid #069;
-}
 a:link, a:visited {
     color: #069;
 }

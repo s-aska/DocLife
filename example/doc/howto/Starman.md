@@ -1,3 +1,0 @@
-# Starman
-
-    starman app.psgi
