@@ -30,6 +30,8 @@ sub format {
 
 sub script {
     my ($self,$req) = @_;
+    return unless $req;
+
     my $int = $req->param('refresh');
     return '' unless $int;
 <<"EOF"
