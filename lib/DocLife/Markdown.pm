@@ -96,7 +96,7 @@ my $top = $self->base_url;
 <body>
 <header><nav>
     <a href="$top">TOP</a>
-    <a href="?refresh=7000">Auto Refresh</a>
+    <a href="?refresh=800">Auto Refresh</a>
 </nav></header>
 <article>
 EOF
