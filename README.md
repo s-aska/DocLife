@@ -1,32 +1,64 @@
-# DocLife
+[![Build Status](https://travis-ci.org/s-aska/DocLife.png?branch=master)](https://travis-ci.org/s-aska/DocLife)
+# NAME
 
-Document Viewer written in Perl, to run under Plack.
+DocLife - Document Viewer written in Perl, to run under Plack.
 
-- DocLife::Pod is Pod Viewer
-- DocLife::Markdown  is Markdown Viewer
+# SYNOPSIS
 
-enjoy document life!
+    # app.psgi
+    use DocLife::Pod;
+    DocLife::Pod->new( root => "./lib" );
 
-## INSTALL
-
-    cpanm DocLife
-
-## RUN
-
+    # one-liner
     plackup -MDocLife::Pod -e 'DocLife::Pod->new( root => "./lib" )->to_app'
 
-## Screenshot
+# How To Mount
 
-<img src="http://dl.dropbox.com/u/11475683/screen/doclife001.png">
+need base\_url option.
 
-## SUPPORT AND DOCUMENTATION
+    # app.psgi
+    use Plack::Builder;
+    use DocLife::Pod;
+    use DocLife::Markdown;
 
-- github: <https://github.com/s-aska/DocLife>
-- cpan: <http://search.cpan.org/dist/DocLife/>
-- perldoc: perldoc -t DocLife
+    my $pod_app = DocLife::Pod->new(
+        root => '../lib',
+        base_url => '/pod/'
+    );
 
-## LICENSE AND COPYRIGHT
+    my $doc_app = DocLife::Markdown->new(
+        root => './doc',
+        suffix => '.md',
+        base_url => '/doc/'
+    );
 
-Copyright (C) Shinichiro Aska
+    builder {
+        mount '/pod' => $pod_app;
+        mount '/doc' => $doc_app;
+    };
+
+# CONFIGURATION
+
+- root
+
+    Document root directory. Defaults to the current directory.
+
+- base\_url
+
+    Specifies a base URL for all URLs on a index page. Defaults to the \`/\`.
+
+- suffix
+
+    Show only files that match the suffix. No url suffix.
+
+# SEE ALSO
+
+[Plack](http://search.cpan.org/perldoc?Plack)
+
+# COPYRIGHT
+
+Copyright 2013 Shinichiro Aska
+
+# LICENSE
 
 This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
