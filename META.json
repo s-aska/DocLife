@@ -51,7 +51,8 @@
             "Path::Class" : "0",
             "Plack" : "0",
             "Pod::Simple::XHTML" : "0",
-            "Text::Markdown" : "0"
+            "Text::Markdown" : "0",
+            "perl" : "5.008001"
          }
       }
    },

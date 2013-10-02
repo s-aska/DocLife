@@ -1,3 +1,5 @@
+requires 'perl', '5.008001';
+
 requires 'Path::Class';
 requires 'Plack';
 requires 'Pod::Simple::XHTML';
