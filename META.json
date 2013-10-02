@@ -68,7 +68,7 @@
          "web" : "https://github.com/s-aska/DocLife"
       }
    },
-   "version" : "0.02",
+   "version" : "0.03",
    "x_authority" : "cpan:ASKADNA",
    "x_contributors" : [
       "c9s <cornelius.howl@gmail.com>",
